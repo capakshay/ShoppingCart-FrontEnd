@@ -1,0 +1,46 @@
+<div  class="d-flex justify-content-between">
+    <h2>Login user</h2>
+    <i class="fa fa-times fa-2x "  [mat-dialog-close] ></i>
+</div>
+<!-- <div class="d-flex justify-content-end">
+</div> -->
+
+<form  [formGroup]="form"  >
+    <div *ngIf="invalid" class="alert alert-danger" role="alert">
+        Invalid Username and Password.
+    </div>
+
+    <div *ngIf="valid" class="alert alert-success" role="alert">
+        You Login Successfully
+    </div>
+
+    <div class="form-group">
+      <label for=" Email1">Username</label>
+      <input type="text" class="form-control" id=" Email1"  
+         placeholder="Enter Username" formControlName="username" autocomplete="off">
+    </div>
+    <small *ngIf="username?.touched && username?.invalid" > 
+        <small *ngIf="username?.errors?.['required']">Username is Required</small>
+        <small *ngIf="username?.errors?.['minlength']">Username must be Minimum of 6 Character</small>
+        <!-- <small *ngIf="username?.errors?.['shouldBeUnique']">username not found</small> -->
+    </small>
+
+    <div class="form-group">
+      <label for=" Password1">Password</label>
+      <input type="text" class="form-control" id=" Password1" 
+         placeholder="Password" formControlName="password" autocomplete="off">
+    </div>
+    <small *ngIf="password?.touched && password?.invalid" > 
+        <small *ngIf="password?.errors?.['required']">Password is Required</small>
+        <small *ngIf="password?.errors?.['pattern']">Minimum 8 and maximum 15 characters,
+             at least one uppercase letter, one lowercase letter,
+              one number and one special character
+        </small>
+    </small>
+
+    <button type="submit" class="btn btn-success" [disabled]="form.invalid"
+    (click)="login()">Login</button>
+</form> 
+<div>
+    <span (click)="openRegister()">New User Register Here</span>
+</div>

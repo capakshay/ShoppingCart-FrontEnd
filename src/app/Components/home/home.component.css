@@ -1,0 +1,77 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.wrapper> div{
+    /* background:rgb(24, 228, 143) ; */
+    /* border: 2px solid lightblue; */
+    /* border-radius: 10px; */
+    padding:2rem;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    padding-right: 5px;
+}
+span{
+    margin-right: 5px;
+}
+.badge{
+    width: 10px;
+}
+span.border{
+    color: #fff7f7;
+    border: 1px solid yellow;
+    border-radius: 5px;
+}
+ 
+
+span.logout{
+    color: #fff7f7;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    padding: 5px;
+}
+span.login{
+    padding-right: 12px;
+}
+
+i.fa-address-book{
+    padding: 10px 5px 0px 10px;
+}
+
+i.fa-users{
+    padding: 10px 0px 0px 10px;
+}
+ 
+i.fa-2x{
+    padding-right: 10px;
+}
+
+button{
+    margin-right: 10px;
+    padding: 0;
+}
+.example-spacer {
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+ 
+
+ 
+mat-sidenav-container{
+    height: 100vh;
+}
+
+mat-sidenav{
+    width: 400px;
+    background-color: #ffffff;
+}
+mat-sidenav-content::-webkit-scrollbar{
+    display: none;
+} 
+mat-toolbar{
+    background-color: rgb(39, 123, 233);
+}

@@ -1,0 +1,13 @@
+img{
+    max-width: 286px;
+    max-height: 180px;
+}
+i{
+    padding: 10px;
+    border: 1px solid orange;
+    border-radius: 10px;
+}
+button{
+    margin: 5px;
+    border-radius: 10px;
+}

@@ -1,0 +1,40 @@
+ 
+
+ <h2>Do you want to Download Bill Receipt?</h2>
+<div class="id=content" #content >
+    <h2>Your Bill</h2>
+     <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Product No</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total Amount</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of billObj">
+          <tr  *ngIf="billObj.length>0">
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.name|uppercase}}</td>
+            <td>{{product.quantity}}</td>
+            <td  >{{product.price|currency:'INR' }}</td>
+            <td  >{{product.quantity*product.price| currency:'INR' }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th></th>
+                <th> </th>
+                <th></th>
+                <th  > {{totalcost| currency:'INR'}} </th>
+            </tr>
+        </tfoot>
+      </table>
+</div>
+<div class="d-flex justify-content-end">
+    
+     <button class="btn btn-danger" mat-button (click)="SavePDF()"> YES</button>
+     <button class="btn btn-secondary" mat-button mat-dialog-close> NO</button>
+</div>

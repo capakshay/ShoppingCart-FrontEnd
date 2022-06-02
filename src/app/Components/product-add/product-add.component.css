@@ -1,0 +1,15 @@
+.center{
+    margin:10px 100px;
+}
+input{
+    /* margin:0px 0px 20px; */
+    size: 50px;
+}
+.width{
+    width: 50%;
+    margin: 0px 0px 10px;
+    padding: 5px;
+}
+label{
+    margin-top: 10px;
+}

@@ -1,0 +1,42 @@
+<div class="center"  >
+    <div class="d-flex justify-content-center">
+        <h1>Shopping Cart</h1>
+    </div>
+      <div>
+          <h2>Cart Details : {{name|uppercase}}</h2>
+      </div>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Product No</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total Amount</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of currentObj">
+          <tr  *ngIf="currentObj.length>0">
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.name|uppercase}}</td>
+            <td>{{product.quantity}}</td>
+            <td class="tdright">{{product.price|currency:'INR' }}</td>
+            <td class="right">{{product.quantity*product.price| currency:'INR' }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th></th>
+                <th> </th>
+                <th></th>
+                <th class="right"> {{totalCost|currency:'INR' }}</th>
+            </tr>
+        </tfoot>
+      </table>
+      <div class="d-flex justify-content-end">
+          <span><button class="btn btn-success"  (click)="generateBill()">PAY</button></span>
+          <span><button class="btn btn-secondary">
+            <a routerLink="/">Cancel</a> </button></span>
+      </div>
+</div>

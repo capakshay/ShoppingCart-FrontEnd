@@ -1,0 +1,15 @@
+span{
+    margin: 0px 10px ;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.center{
+    margin:10px 100px;
+}
+.right{
+    float: right;
+    width: 50%;
+    border-left-color: white;
+} 

@@ -1,0 +1,30 @@
+<mat-dialog-content class="mat-typography">
+     
+        <h2>Edit data of Product {{currentObj[0].name}}</h2>
+        <br>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="ItemId">ID of item</label>
+              <input type="number" class="form-control" id="ItemId" placeholder="Enter Id of Item" formControlName="id" readonly>
+            </div>
+            <div class="form-group">
+              <label for="nameOfProduct">Name of Product</label>
+              <input type="text" class="form-control" id="nameOfProduct" placeholder="Enter Name of Product" formControlName="name" readonly>
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="number" class="form-control" id="price" placeholder="Enter Price of Product" formControlName="price">
+            </div> 
+            <div class="form-group">
+              <label for="price">Quantity</label>
+              <input type="number" class="form-control" id="quantity" placeholder="Enter Price of Product" formControlName="quantity">
+            </div> 
+            <div class="form-group">
+                <button class="btn btn-success"  >Submit</button> 
+            </div>
+        </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- <span mat-button mat-dialog-close></span> -->
+    <button class="btn btn-secondary" mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

@@ -1,0 +1,83 @@
+<mat-toolbar>
+<mat-toolbar-row>
+      <span>Shopping Cart </span> 
+      <span class="example-spacer">
+    </span>
+    <span *ngIf="isUserLogin()" >
+        <strong>
+           Welcome 
+        {{name | uppercase}} 
+       </strong> 
+     </span>
+      
+    
+      <span *ngIf="isLogin && isUserLogin()" class="border"  >
+        <i class="fa fa-address-book fa-1x" aria-hidden="true"></i>
+        <a routerLink="admin">Admin</a> 
+      </span>
+
+      <span *ngIf="!isUserLogin()" class="border" (click)="userLogin()">
+          <i class="fa fa-users fa-1x" aria-hidden="true"></i>
+          <span class="login"> Login</span>
+      </span>
+      <span *ngIf="isUserLogin()" class="logout" (click)="userLogout()">
+          <!-- <i class="fa fa-users fa-1x" aria-hidden="true"></i> -->
+          <span class="login">Logout</span>
+      </span>
+      <button type="button" class="btn btn-warning" (click)="opened=!opened">
+        <i class="fa fa-shopping-cart fa-2x"></i> <span class="badge badge-warning"></span>
+        <span class="sr-only">unread messages</span>
+      </button>
+       
+</mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side" position="end"  >
+        <app-cart *ngIf="opened"></app-cart>
+    </mat-sidenav>
+    <mat-sidenav-content cdk-scrollable>
+        <div (click)="opened=false">
+            <app-image-slider [productlist]="forImageSlider"></app-image-slider>
+            <app-product-list (messageEvent)="receiveMessage($event)"></app-product-list>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-header (newItemEvent)="addItem($event)">
+</app-header>
+<div>
+    <app-image-slider [productlist]="forImageSlider"></app-image-slider>
+    <div>
+       <h3>Product List</h3>
+       <app-cart *ngIf="isDisplay"></app-cart>
+   </div>
+    <div class="wrapper">
+        <div>
+            <h3>Our Products</h3>
+            <app-product-list></app-product-list>
+        </div>
+            
+    </div>
+</div>    -->
+<!-- ?<button (click)="onUpload()">Upload</button> -->
+<!-- <div>
+    <h3>Product List</h3>
+    <app-cart ></app-cart>
+</div> -->

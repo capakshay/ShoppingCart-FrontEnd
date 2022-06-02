@@ -1,0 +1,26 @@
+img{
+    width:100px;
+    height:90px;
+}
+li{
+    width: 100%;
+    height: 110px;
+    margin: 5px 10px 0px 5px;
+    padding: 10px;
+    font-size: 1.3rem;
+} 
+ 
+h5{
+    font-size: 3rem;
+    color: red;
+}
+
+.align-items-center { 
+    height: 100%;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+    padding:0px 60px;
+} 

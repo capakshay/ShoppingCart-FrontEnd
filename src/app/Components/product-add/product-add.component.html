@@ -1,0 +1,51 @@
+<div class="center">
+    <div class="d-flex justify-content-center">
+        <h1>Add Products</h1>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()"  enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="nameOfProduct">Name of Product</label>
+        <input type="text" class="form-control" id="nameOfProduct" placeholder="Enter Name of Product" formControlName="name" autocomplete="off">
+      </div>
+      <div *ngIf="name?.touched && name?.invalid" class="alert alert-danger width">
+          <div *ngIf="name?.errors?.['required']">Name is Required</div>
+          <div *ngIf="name?.errors?.['minlength']">Minimum length must be greater than 3</div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" placeholder="Enter Price of Product" formControlName="price" autocomplete="off">
+      </div> 
+      <div *ngIf="price?.touched && price?.invalid" class="alert alert-danger width">
+        <div *ngIf="price?.errors?.['required']">Price is Required</div>
+      </div>
+       <!-- <div class="from-group">
+        <input  (change)="onFileChanged($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01">
+        <button  class="input-group-text upload"  (click)="onUpload()"  id="btnUpload">Upload</button>
+        </div> -->
+
+        <div class="form-group">
+          <label for="ItemId">Quantity of items</label>
+          <input type="number" class="form-control" id="ItemId" placeholder="Enter Quantity of Item" formControlName="qty" autocomplete="off">
+        </div>
+        <div *ngIf="qty?.touched && qty?.invalid" class="alert alert-danger width">
+          <div *ngIf="qty?.errors?.['required']">Quantity is Required</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Add Multiple Images</label>
+          <input class="form-control" type="file" id="formFile" name="images" multiple (change)="selectMultipleImage($event)" formArrayName="imgurl" autocomplete="off">
+        </div>
+        <!-- <div *ngIf="imgurl?.touched && imgurl?.invalid" class="alert alert-danger width">
+          <div *ngIf="imgurl?.errors?.['required']">Images is Required</div>
+        </div> -->
+        <!-- <div class="form-group">
+          <input type="file" name="images" multiple (change)="selectMultipleImage($event)" formArrayName="imgurl" />
+        </div>  -->
+        <div class="form-group">
+            <button class="btn btn-success" [disabled]="!form.valid || multipleImages.length == 0">Add Product</button> 
+        </div>
+    </form>
+</div>
+
+<app-add-product [refreshData]="this.refreshData"></app-add-product>

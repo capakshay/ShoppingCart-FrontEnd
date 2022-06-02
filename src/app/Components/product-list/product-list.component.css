@@ -1,0 +1,16 @@
+img{
+    max-width: 286px;
+    max-height: 180px;
+    object-fit: contain;
+}
+button{
+    margin: 5px;
+    border-radius: 10px;
+}
+.container{
+    margin-top: 20px;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}

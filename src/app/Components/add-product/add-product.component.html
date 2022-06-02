@@ -1,0 +1,58 @@
+<div class="center">
+  <div class="d-flex justify-content-center">
+      <h1>Products</h1>
+  </div>
+    <div>
+        <h2>Product Details</h2>
+    </div>
+  <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Product Id</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th> 
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of currentObj">
+        <tr>
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.name}}
+            <img src={{product.images[0]}} alt="">
+          </td>
+          <td>{{product.quantity}}</td>
+          <td>{{product.price}}</td> 
+          <td>
+            <button class="btn btn-info" (click)="openEditDialog(product)">Edit</button>
+            <button class="btn btn-danger" (click)="openDeleteDialog(product)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+<!-- <div class="center">
+    <form #f="ngForm" (ngSubmit)="submit(f)">
+        <div class="form-group">
+          <label for="ItemId">ID of item</label>
+          <input type="number" class="form-control" id="ItemId" placeholder="Enter Id of Item" ngModel name="ItemId">
+        </div>
+        <div class="form-group">
+          <label for="nameOfProduct">Name of Product</label>
+          <input type="text" class="form-control" id="nameOfProduct" placeholder="Enter Name of Product" ngModel name="nameOfProduct">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" class="form-control" id="price" placeholder="Enter Price of Product" ngModel name="price">
+        </div> 
+        <div class="form-group">
+            <button class="btn btn-success">Add Product</button> 
+        </div>
+    </form>
+</div> -->
+<!-- <div class="form-group center">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onFileChanged($event)">
+</div> -->

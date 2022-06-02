@@ -1,0 +1,88 @@
+
+<h2>Registration Form</h2>
+<form [formGroup]="registerFrom" (ngSubmit)="submitRegisterFrom()">
+    <div class="form-group">
+      <label for="username1">Username</label>
+      <input type="text" class="form-control" id="username1" aria-describedby="emailHelp"
+         placeholder="Enter Username" formControlName="username">
+    </div>
+    <small *ngIf="username?.touched && username?.invalid" > 
+        <small *ngIf="username?.errors?.['required']">Username is Required</small>
+        <small *ngIf="username?.errors?.['minlength']">Username must be Minimum of 6 Character</small>
+    </small>
+     
+    <div class="form-group">
+      <label for="password1">Password</label>
+      <input type="password" class="form-control" id="password1" 
+        placeholder="Enter Password" formControlName="password" autocomplete="off">
+    </div>
+    <small *ngIf="password?.touched && password?.invalid" > 
+        <small *ngIf="password?.errors?.['required']">Password is Required</small>
+        <small *ngIf="password?.errors?.['pattern']">Minimum 8 and maximum 15 characters,
+             at least one uppercase letter, one lowercase letter,
+              one number and one special character
+        </small>
+    </small>
+
+    <div class="form-group">
+      <label for="firstname1">Firstname</label>
+      <input type="text" class="form-control" id="firstname1" 
+        placeholder="Enter Firstname" formControlName="firstname">
+    </div>
+     <small *ngIf="firstname?.touched && firstname?.invalid" > 
+        <small *ngIf="firstname?.errors?.['required']">Firstname is Required</small>
+        <small *ngIf="firstname?.errors?.['pattern']">Firstname must start with alphabets 
+          and length of characters is must between 2 and 15.
+        </small>
+    </small>
+
+    <div class="form-group">
+      <label for="lastname1">Last name</label>
+      <input type="text" class="form-control" id="lastname1" 
+        placeholder="Enter Lastname" formControlName="lastname">
+    </div>
+    <small *ngIf="lastname?.touched && lastname?.invalid" > 
+      <small *ngIf="lastname?.errors?.['required']">Lastname is Required</small>
+      <small *ngIf="lastname?.errors?.['pattern']">Lastname must start with alphabets 
+        and length of characters is must between 2 and 15.
+      </small>
+     </small> 
+
+    <div class="form-group">
+      <label for="mobileno1">Mobile no.</label>
+      <input type="text" class="form-control" id="mobileno1"
+         placeholder="Enter Mobile no." formControlName="mobileNo">
+    </div>
+    <small *ngIf="mobileNo?.touched && mobileNo?.invalid" > 
+      <small *ngIf="mobileNo?.errors?.['required']">mobileNo is Required</small>
+      <small *ngIf="mobileNo?.errors?.['pattern']">mobile number is like Ex: +910123456789 or 0123456789
+      </small>
+    </small>  
+
+    <div class="form-group">
+      <label for="email1">Email</label>
+      <input type="email" class="form-control" id="email1" 
+        placeholder="Enter Email" formControlName="email">
+    </div>
+    <small *ngIf="email?.touched && email?.invalid" > 
+      <small *ngIf="email?.errors?.['required']">Email is Required</small>
+      <small *ngIf="email?.errors?.['pattern']">Email is like(someone@gmail.com 
+        david@davitech.io)
+      </small>
+    </small>
+    
+    <div class="form-group">
+      <label for="address1">Address</label>
+      <input type="text" class="form-control" id="address1" 
+      placeholder="Enter Address" formControlName="address">
+    </div>
+    <small *ngIf="address?.touched && address?.invalid" > 
+        <small *ngIf="address?.errors?.['required']">Address is Required</small>
+        <small *ngIf="address?.errors?.['pattern']"> 
+          Address not contain @a
+        </small>
+    </small>
+
+    <button type="submit" class="btn btn-success" 
+    [disabled]="registerFrom.invalid" [mat-dialog-close]>Register</button>
+</form>
